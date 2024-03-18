@@ -14,5 +14,28 @@ body {
 
 canvas {
     background: #f0f0f0;
-    
+    display: block;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 45px;
+    color: white;
+}
+
+.btn {
+    cursor: pointer;
+    border: 0;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #222222;
+}
+
+.btn:active {
+    transform: scale(0.98)
 }
