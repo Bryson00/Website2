@@ -119,7 +119,29 @@ function keyUp(e) {
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
 
+function moveBall() {
+    ball.x = ball.x + ball.dx
+    ball.y = ball.y + ball.dy
+
+    if (ball.y + ball.size < 0) {
+        ball.dy = -1 * ball.dy
+    }
+    if (ball.x + ball,size > canvas.width) {
+        ball.dx = -1 * ball.dx
+    }
+    if (ball.y + ball.size > canvas.height) {
+        ball.dy = -1 * ball.dy
+    }
+    if (ball.x + ball.size < 0) {
+        ball.dx = -1 * ball.dx
+    }
+    if (ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size < paddle.y) {
+        ball.dy = -1 * ball.dy
+    }
+}
+
 function update() {
+    moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
