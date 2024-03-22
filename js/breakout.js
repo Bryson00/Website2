@@ -41,7 +41,7 @@ function drawPaddle() {
 }
 
 function drawScore() {
-    ctx.fillText('Score: ${score}, canvas.width-100, 30)
+    ctx.fillText('Score: ${score}', canvas.width-100, 30)
 }
 
 function draw() {
