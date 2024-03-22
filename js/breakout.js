@@ -107,14 +107,14 @@ function keyDown(e) {
     }
 }
 
-function keyUp {
-    if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == || 'Left') {
+function keyUp(e) {
+    if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'Left') {
         paddle.dx = 0
     }
 }
 
 document.addEventListener('keydown', keyDown)
-document.addEventListener('keyup', KeyUp)
+document.addEventListener('keyup', keyUp)
 
 function update() {
     movePaddle()
