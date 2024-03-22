@@ -40,7 +40,9 @@ bricks = []
 for(let i = 0; i < brickRowCount; i++) {
     bricks[i] = []
     for (let j = 0; j < brickColumnCount; j++) {
-        let x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
+        const x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
+        const y = j * (brickInfo.h + brickInfo.padding) + brickInfo.offsetY
+        bricks[i][j] = {x, y, ...brickInfo}
     }
 }
 
@@ -65,10 +67,25 @@ function drawScore() {
     ctx.fillText(`Score: ${Score}`, canvas.width-100, 30)
 }
 
+function drawBricks() {
+    bricks.forEach(column => {
+        column.forEach(brick => {
+            ctx.beginPath()
+            ctx.rect(brick.x, brick.y, brick.w, brick.h)
+            ctx.fillStyle = brick.visible ? '#0095dd' : 'transparent';
+            ctx.fill()
+            ctx.closePath()
+        })
+    })
+}
+
+
+
 function draw() {
     drawPaddle()
     drawBall()
     drawScore()
+    drawBricks()
 }
 
 draw()
