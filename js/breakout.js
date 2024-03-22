@@ -82,11 +82,39 @@ function drawBricks() {
 
 
 function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     drawPaddle()
     drawBall()
     drawScore()
     drawBricks()
 }
+
+function movePaddle() {
+    paddle.x = paddle.x + paddle.dx
+
+    if (paddle.x < 0) {
+        paddle.x = 0
+    }
+}
+
+function keyDown(e) {
+    console.log(e.key)
+    if (e.key =='ArrowRight' || e.key == 'Right') {
+        paddle.dx = paddle.speed
+    }
+    if (e.key == 'ArrowLeft' || e.key == 'Left') {
+        paddle.dx = -paddle.speed
+    }
+}
+
+function keyUp {
+    if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == || 'Left') {
+        paddle.dx = 0
+    }
+}
+
+document.addEventListener('keydown', keyDown)
+document.addEventListener('keyup', KeyUp)
 
 function update() {
     movePaddle()
