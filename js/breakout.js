@@ -4,6 +4,8 @@ closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
+score = 0
+
 ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
@@ -30,6 +32,20 @@ paddle = {
     dx: 0
 }
 
+function drawPaddle() {
+    ctx.beginPath()
+    ctx.rect(paddle.x, paddle.y, paddle.h)
+    ctx.fillStyle = '#0095dd'
+    ctx.fill()
+    ctx.closePath()
+}
+
+function draw() {
+    drawPaddle()
+    drawBall()
+}
+
+drawPaddle()
 drawBall()
 
 
