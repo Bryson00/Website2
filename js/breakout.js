@@ -41,6 +41,7 @@ function drawPaddle() {
 }
 
 function drawScore() {
+    ctx.font = '20px Arial'
     ctx.fillText(`Score: ${Score}`, canvas.width-100, 30)
 }
 
