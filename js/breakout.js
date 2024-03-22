@@ -4,7 +4,7 @@ closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
-score = 0
+Score = 0
 
 ball = {
     x: canvas.width / 2,
@@ -41,7 +41,7 @@ function drawPaddle() {
 }
 
 function drawScore() {
-    ctx.fillText('Score: {score}', canvas.width-100, 30)
+    ctx.fillText(`Score: ${Score}`, canvas.width-100, 30)
 }
 
 function draw() {
