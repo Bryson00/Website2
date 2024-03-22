@@ -88,6 +88,14 @@ function draw() {
     drawBricks()
 }
 
+function update() {
+    movePaddle()
+    draw()
+    requestAnimationFrame(update)
+}
+
+update()
+
 draw()
 
 
@@ -99,9 +107,3 @@ closeBtn.addEventListener('click', () => {
     rules.classList.remove('show')
 })
 
-
-
-
-function update() {
-    request
-}
