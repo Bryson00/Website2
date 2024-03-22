@@ -41,7 +41,7 @@ function drawPaddle() {
 }
 
 function drawScore() {
-    ctx.fillText('Score: ${score}', canvas.width-100, 30)
+    ctx.fillText('Score: {score}', canvas.width-100, 30)
 }
 
 function draw() {
@@ -50,8 +50,7 @@ function draw() {
     drawScore()
 }
 
-drawPaddle()
-drawBall()
+draw()
 
 
 rulesBtn.addEventListener('click', () => {
