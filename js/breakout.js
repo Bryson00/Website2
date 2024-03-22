@@ -24,7 +24,7 @@ function drawBall() {
 paddle = {
     x: canvas.width / 2 - 40,
     y: canvas.height - 20,
-    
+
 }
 
 drawBall()
@@ -37,3 +37,10 @@ rulesBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     rules.classList.remove('show')
 })
+
+
+
+
+function update() {
+    request
+}
