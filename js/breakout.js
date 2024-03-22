@@ -34,7 +34,7 @@ function drawBall() {
 
 function drawPaddle() {
     ctx.beginPath()
-    ctx.rect(paddle.x, paddle.y, paddle.h)
+    ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h)
     ctx.fillStyle = '#0095dd'
     ctx.fill()
     ctx.closePath()
