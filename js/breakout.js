@@ -6,6 +6,9 @@ ctx = canvas.getContext('2d')
 
 Score = 0
 
+brickRowCount = 9
+brickColumnCount = 5
+
 ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
@@ -22,6 +25,23 @@ paddle = {
     h: 10,
     speed: 8,
     dx: 0
+}
+
+brickInfo = {
+    w: 70,
+    h: 20,
+    padding: 10,
+    offsetX: 45,
+    offsetY: 60,
+    visible: true
+}
+
+bricks = []
+for(let i = 0; i < brickRowCount; i++) {
+    bricks[i] = []
+    for (let j = 0; j < brickColumnCount; j++) {
+        let x = i * (brickInfo.w + brickInfo.padding) + brickInfo.offsetX
+    }
 }
 
 function drawBall() {
