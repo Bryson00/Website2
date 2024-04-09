@@ -68,5 +68,6 @@ h1 {
     border: 2px solid white;
     color: white;
     cursor: pointer;
-    
+    width: 150px;
+    height: 150px;
 }
