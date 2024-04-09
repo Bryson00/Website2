@@ -4,7 +4,8 @@ closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 
-Score = 0
+
+score = 0
 
 brickRowCount = 9
 brickColumnCount = 5
@@ -64,7 +65,7 @@ function drawPaddle() {
 
 function drawScore() {
     ctx.font = '20px Arial'
-    ctx.fillText(`Score: ${Score}`, canvas.width-100, 30)
+    ctx.fillText(`score: ${score}`, canvas.width-100, 30)
 }
 
 function drawBricks() {
@@ -111,7 +112,7 @@ function keyDown(e) {
 }
 
 function keyUp(e) {
-    if (e.key == 'ArrowRight' || e.key == 'Right' || e.key == 'Left') {
+    if (e.key == 'ArrowRight' ||e.key == 'ArrowLeft' || e.key == 'Right' || e.key == 'Left') {
         paddle.dx = 0
     }
 }
@@ -126,7 +127,7 @@ function moveBall() {
     if (ball.y + ball.size < 0) {
         ball.dy = -1 * ball.dy
     }
-    if (ball.x + ball,size > canvas.width) {
+    if (ball.x + ball.size > canvas.width) {
         ball.dx = -1 * ball.dx
     }
     if (ball.y + ball.size > canvas.height) {
@@ -137,19 +138,22 @@ function moveBall() {
     if (ball.x + ball.size < 0) {
         ball.dx = -1 * ball.dx
     }
-    if (ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size < paddle.y) {
+    if (ball.x - ball.size > paddle.x &&
+        ball.x + ball.size < paddle.x + paddle.w &&
+        ball.y + ball.size > paddle.y) {
         ball.dy = -1 * ball.dy
-    }
-    if (ball.x - ball.size > paddle.x && ball.x + ball.size < paddle.x + paddle.w && ball.y + ball.size > paddle.y) {
-        ball.dy = -1 * ball.speed
     }
 
     bricks.forEach(column => {
         column.forEach(brick => {
             if (brick.visible) {
-                if (ball.x -ball.size > ball.x && ball.x + ball.size < brick.x + brick.w && ball.y + ball.size > brick.y && ball.y - ball.size < brick.y + brick.h) {
+                if (ball.x - ball.size > brick.x &&
+                    ball.x + ball.size < brick.x + brick.w &&
+                    ball.y + ball.size > brick.y &&
+                    ball.y - ball.size < brick.y + brick.h) {
                     ball.dy = -1 * ball.dy
                     brick.visible = false
+                    increaseScore()
                 }
             }
         })
