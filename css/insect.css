@@ -67,11 +67,12 @@ h1 {
 
 .choose-insect-btn {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     cursor: pointer;
+    font-family: inherit;
     width: 150px;
-    height: 150
+    height: 150px;
 }
 
 .choose-insect-btn:hover {
