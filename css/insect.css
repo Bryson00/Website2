@@ -88,12 +88,18 @@ h1 {
     position: relative;
 }
 
-
 .time {
     position: absolute;
     top: 20px;
     left: 20px;
 }
+
+.score {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
  .message {
     line-height: 1.7;
     width: 100%;
