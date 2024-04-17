@@ -12,3 +12,16 @@ let selected_insect = {}
 start_btn.addEventListener('click', () => {
     screens[0].classList.add('up')
 })
+
+choose_insect_btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const img = btn.querySelector('img')
+        const alt = img.getAttribute('alt')
+        const src = img.getAttribute('src')
+        screens[1].classList.add('up')
+        selected_insect - {src, alt}
+        setTimeout(createInsect, 1000)
+        startGame()
+    })
+})
+
