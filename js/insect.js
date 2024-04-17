@@ -65,7 +65,7 @@ function addInsects () {
     setTimeout(createInsect, 1500)
 }
 
-function inscreaseScore() {
+function increaseScore() {
     score++
     if (score > 19) {
         message.classList.add('visible')
@@ -77,7 +77,7 @@ function inscreaseScore() {
 function getRandomLocation() {
     const width = window.innerWidth
     const height = window.innerHeight
-    const x = Math.random() * (wdith - 200) + 100
+    const x = Math.random() * (width - 200) + 100
     const y = Math.random() * (height - 200) + 100
     return { x, y }
 }
