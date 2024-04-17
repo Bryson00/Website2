@@ -36,7 +36,7 @@ function increaseTime() {
         m = `0${m}`
     }
     if (s < 10) {
-        s = `$0{s}`
+        s = `0${s}`
     }
     timeEl.innerHTML = `Time: ${m}:${s}`
 }
