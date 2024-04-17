@@ -25,6 +25,21 @@ choose_insect_btns.forEach(btn => {
     })
 })
 
+function startGame() {
+    setInterval(increaseTime, 1000)
+}
+
+function increaseTime() {
+    let m = Math.floor(seconds / 60)
+    let s = seconds % 60
+    if (m < 10) {
+        m = `0${m}`
+    }
+    if (s < 10) {
+        s = `$0{s}`
+    }
+    timeEl.innerHTML = `Time: ${m}:${s}`
+}
 
 function createInsect() {
     const insect = document.createElement('div')
@@ -45,7 +60,7 @@ function catchInsect() {
     addInsects()
 }
 
-function addInsects() {
+function addInsects () {
     setTimeout(createInsect, 1000)
     setTimeout(createInsect, 1500)
 }
