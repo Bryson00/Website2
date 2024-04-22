@@ -96,7 +96,7 @@ h1 {
     text-align: center;
 }
 
-.popup {
+.popup button {
     cursor: pointer;
     background-color: #ffffff;
     color: #2980b9;
