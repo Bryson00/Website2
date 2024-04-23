@@ -54,13 +54,24 @@ function updateWrongLetters() {
     })
 
     // Check if Lost
-    If (wrongLetters.length == figureParts.length) {
+    If (wrongLetters.length == figureParts.length)
         finalMessage.innerText = 'Unfortunately you lost!'
         popup.style.display = 'flex'
-    }
 }
 
 // Show Notification
 function showNotification() {
 
 }
+
+
+playAgainBtn.addEventListener('click', () => {
+    correctLetters.length = 0
+    wrongLetters.length = 0
+    selectedIndex = Math.floor(word.length * Math.random())
+    selectedWord = word[selectedIndex]
+
+})
+
+
+displayWord()
