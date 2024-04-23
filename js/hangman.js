@@ -34,6 +34,8 @@ function displayWord() {
     }
 }
 
+
+
 // Update the wrong letters
 function updateWrongLetters() {
     // Display Wrong Letters
@@ -61,7 +63,11 @@ function updateWrongLetters() {
 
 // Show Notification
 function showNotification() {
+    notification.classList.add('show')
 
+    setTimeout(() => {
+        notification.classList.remove('show')
+    }, 2000)
 }
 
 //Keydown letter press
