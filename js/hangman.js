@@ -71,7 +71,11 @@ playAgainBtn.addEventListener('click', () => {
     selectedIndex = Math.floor(word.length * Math.random())
     selectedWord = word[selectedIndex]
 
+    displayWord()
+
+    updateWrongLetters()
+
+    popup.style.display = 'none'
+
+
 })
-
-
-displayWord()
