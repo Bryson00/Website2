@@ -36,7 +36,7 @@ function displayWord() {
 
 // Update the wrong letters
 function updateWrongLetters() {
-    wrongLetterEl.innerHTML = `
+    wrongLettersEl.innerHTML = `
         ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
 
     `
