@@ -113,3 +113,5 @@ playAgainBtn.addEventListener('click', () => {
 
 
 })
+
+displayWord()
