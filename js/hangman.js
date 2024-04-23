@@ -85,15 +85,15 @@ window.addEventListener('keydown', e => {
         else {
             showNotification()
         }
+    }
         else {
             if (!wrongLetters.includes(Letter)) {
                 wrongLetters.push(letter)
 
                 updateWrongLettersEl()
-            }
+        }
             else {
                 showNotification()
-            }
         }
     }
 })
